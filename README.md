@@ -5,7 +5,7 @@ Implements some algorithm
 Recursive version, not good at performance
 
 #Josephus Problem
-Use circular linked list the implementation is very simple, don't know why the other answers online is so complicated.
+Use circular linked list to solve it.
 
 #Binary Search
 Nothing special
