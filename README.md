@@ -7,8 +7,17 @@ Recursive version, not good at performance
 #Josephus Problem
 Use circular linked list to solve it.
 
-#Binary Search
-Nothing special
+#Search
+ - Binary
+ - Bitonic
+
+#Sort
+ - Bubble
+ - Quick
+ - Merge
+
+#Sum
+ - Fast ThreeSum
 
 #Expression Evaluator
 Very simple one, can only evaluate expression with all brackets.

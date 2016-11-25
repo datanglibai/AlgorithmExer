@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
-        Sort.quick(data, 0, data.length-1);
+        Sort.bubble(data);
         for(int i = 0; i< data.length; i++)
         System.out.println(data[i]);
 

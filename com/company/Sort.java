@@ -3,16 +3,18 @@ package com.company;
 public class Sort {
     public static void bubble(int[] a)
     {
-        for (int i = 0; i< a.length -1; i++)
-            for(int j=i; j< a.length; j++)
-            {
-                if(a[i] > a[j])
-                {
+        boolean swap = false;
+        for (int i = 0; i< a.length -1; i++) {
+            if( i!=0 && !swap) break;
+            for (int j = i; j < a.length; j++) {
+                if (a[i] > a[j]) {
                     int temp = a[i];
                     a[i] = a[j];
                     a[j] = temp;
+                    swap = true;
                 }
             }
+        }
     }
 
     public static void quick(int[] a, int low, int high)
