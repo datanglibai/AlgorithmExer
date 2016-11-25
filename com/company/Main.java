@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
-import java.io.InputStream;
 import java.util.*;
 import java.io.*;
 
@@ -9,23 +7,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-
-        for (int N = 0; N < 50; N++)
-            System.out.println(N + " " + Fibonacci.FastF(N));
-
-        for (int N = 0; N < 50; N++)
-            System.out.println(N + " " + Fibonacci.SlowF(N));
-
         //int[] a = new int[]{1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11};
         //System.out.println(ThreeSumFast.count(a));
 
          //Josephus jp = new Josephus();
          //int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
         //jp.josephus(data, 3);
+
         //readAsArray("data.txt");
         //System.out.println(Main.class.getClassLoader().getResource("data.txt"));
 
-        //System.out.println(Fibonacci.F(10));
         //Fibonacci.main(new String[]{});
         //System.out.println(binomial(10,8,0.2));
 
@@ -33,18 +24,10 @@ public class Main {
 
 
         //System.out.println(mystery(3,11));
-        System.out.println(args.length > 0 ? args[0]:"no args");
-        System.out.print("Hello World\n");
         System.out.println("5 is prime? " + isPrime(5));
         System.out.println("8 is prime? " + isPrime(8));
 
-        int[] list = new int[]{4,5,7,9,12,34};
-        System.out.println("90 index is " + indexOf(90, list));
 
-        System.out.println("Math lib");
-        System.out.printf("Pi is: %.2f", Math.PI);
-        System.out.println();
-        System.out.println("E is: " + Math.E);
         Scanner in = new Scanner(System.in);
         String inp = in.nextLine();
         int i = in.nextInt();
@@ -69,7 +52,7 @@ public class Main {
 
     public static int mystery(int a, int b)
     {
-        //this actually is a multiply operationn.
+        //this actually is a multiply operation.
         if (b == 0)     return 0;
         if (b % 2 == 0) return mystery(a+a, b/2);
         return mystery(a+a, b/2) + a;
@@ -80,6 +63,15 @@ public class Main {
         for(int i = 2; i*i < n; i++)
         { if (n % i == 0) return false; }
         return true;
+    }
+
+    private static void testFibonacci(int N)
+    {
+        for (int i = 0; i < N; i++)
+            System.out.println(N + " " + Fibonacci.FastF(N));
+
+        for (int i = 0; i < N; i++)
+            System.out.println(N + " " + Fibonacci.SlowF(N));
     }
 
     public static ArrayList readAsArray(String filename){
@@ -104,26 +96,5 @@ public class Main {
         return arr;
         */
 
-    }
-
-    public static int indexOf(int key, int[] a)
-    {
-        return indexOf(key, a, 0, a.length - 1);
-    }
-
-    private static void addInt(int i)
-    {
-
-    }
-
-    public static int indexOf(int key, int[] a, int lo, int hi)
-    {  // Index of key in a[], if present, is not smaller than lo
-        //                                  and not larger than hi.
-
-        if (lo > hi) return -1;
-        int mid = lo +(hi - lo) /2;
-        if (key < a[mid]) return indexOf(key, a, lo, mid - 1);
-        else if (key > a[mid]) return indexOf(key, a, mid + 1, hi);
-        else return mid;
     }
 }

@@ -22,9 +22,4 @@ public class Fibonacci
         }
         return f;
     }
-    public static void main(String[] args)
-    {
-        for (int N = 0; N < 10; N++)
-            System.out.println(N + " " + FastF(N));
-    }
 }
