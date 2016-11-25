@@ -1,23 +1,23 @@
 # AlgorithmExer
 Implements some algorithm
 
-#Fibonacci Generator
+## Fibonacci Generator
 Recursive version, not good at performance
 
-#Josephus Problem
+## Josephus Problem
 Use circular linked list to solve it.
 
-#Search
+## Search
  - Binary
  - Bitonic
 
-#Sort
+## Sort
  - Bubble
  - Quick
  - Merge
 
-#Sum
+## Sum
  - Fast ThreeSum
 
-#Expression Evaluator
+##Expression Evaluator
 Very simple one, can only evaluate expression with all brackets.
