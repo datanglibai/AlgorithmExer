@@ -7,11 +7,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
+        Sort.quick(data, 0, data.length-1);
+        for(int i = 0; i< data.length; i++)
+        System.out.println(data[i]);
+
         //int[] a = new int[]{1,2,3,4,5,6,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11};
         //System.out.println(ThreeSumFast.count(a));
 
          //Josephus jp = new Josephus();
-         //int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
+
         //jp.josephus(data, 3);
 
         //readAsArray("data.txt");
