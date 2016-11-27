@@ -12,12 +12,10 @@ public class ThrowingEggs{
 
     public static int brokenF_lgF(int[] a)
     {
-        // the data represents the broken status from 1 ~N e.g.
-        // [0,0,0,0,0,0,0,1,1,1,1,1]
+        // go through 0, 1, 2, 4, 8, 16...2^k get first a[k] == 1, binary search a[k-1]~a[k]
         int lo  = 0;
         int hi = a.length - 1;
-
-        while (lo <= hi) {  // Key is in a[lo..hi] or not present.
+        while (lo <= hi) {
             if (a[lo] == 0)
             {
                 lo = lo == 0 ? 1 : lo * 2;

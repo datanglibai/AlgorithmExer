@@ -7,9 +7,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] brokenEggs = new int[]{0,0,0,0,0,0,0,0,1,1,1,1,1,1};
-        System.out.println(ThrowingEggs.brokenF_lgN(brokenEggs));
-        System.out.println(ThrowingEggs.brokenF_lgF(brokenEggs));
+        testSelectionSort();
+
+        //int[] brokenEggs = new int[]{0,0,0,0,0,0,0,0,1,1,1,1,1,1};
+        //System.out.println(ThrowingEggs.brokenF_lgN(brokenEggs));
+        //System.out.println(ThrowingEggs.brokenF_lgF(brokenEggs));
         //int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
         //Sort.bubble(data);
         //for(int i = 0; i< data.length; i++)
@@ -40,6 +42,14 @@ public class Main {
         String inp = in.nextLine();
         int i = in.nextInt();
         System.out.println(inp + " , " + i);
+    }
+
+    public static void testSelectionSort()
+    {
+        String[] a = readAsStringArray("stringdata.txt");
+        SortGeneral.insertion(a);
+        assert SortGeneral.isSorted(a);
+        SortGeneral.show(a);
     }
 
     public static double binomial(int N, int k, double p)
@@ -90,6 +100,32 @@ public class Main {
         myReader.lines().forEach(i -> al.add(Integer.parseInt(i)));
         System.out.println(al);
         return al;
+        /*
+        System.out.println("Read by Scanner");
+        Scanner dataArray = new Scanner(input);
+        ArrayList arr = new ArrayList();
+
+        while(dataArray.hasNextInt())
+        {
+            arr.add(dataArray.nextInt());
+        }
+        System.out.println(arr);
+
+        return arr;
+        */
+
+    }
+
+    public static String[] readAsStringArray(String filename){
+        InputStream input = Main.class.getClassLoader().getResourceAsStream(filename);
+        BufferedReader myReader=new BufferedReader(new InputStreamReader(input));
+        System.out.println("Read by BufferedReader:");
+        Object[] al = myReader.lines().toArray();
+        String[] result = new String[al.length];
+        for (int i = 0; i< al.length; i++) {
+            result[i] = String.valueOf(al[i]);
+        }
+        return result;
         /*
         System.out.println("Read by Scanner");
         Scanner dataArray = new Scanner(input);
