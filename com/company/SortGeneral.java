@@ -1,4 +1,7 @@
 package com.company;
+
+import java.util.Comparator;
+
 public class SortGeneral
 {
     public static void selection(Comparable[] a)
@@ -24,14 +27,85 @@ public class SortGeneral
         }
     }
 
+
+    public static void bubble(Comparable[] a)
+    {
+        boolean swap = false;
+        for (int i = 0; i< a.length -1; i++) {
+            if( i!=0 && !swap) break;
+            for (int j = i; j < a.length; j++) {
+                if (less(a[j], a[i])) {
+                    exch(a, i, j);
+                    swap = true;
+                }
+            }
+        }
+    }
+
+    public static void shell(Comparable[] a)
+    {
+        int N = a.length;
+        int h = 1;
+        while (h < N/3) h = 3*h + 1; // 1, 4, 13, 40, 121, 364, 1093, ...
+        while (h >= 1)
+        {  // h-sort the array.
+            for (int i = h; i < N; i++)
+            {  // Insert a[i] among a[i-h], a[i-2*h], a[i-3*h]... .
+                for (int j = i; j >= h && less(a[j], a[j-h]); j -= h)
+                    exch(a, j, j-h);
+            }
+            h = h/3; }
+    }
+
+    public static void quick(Comparable[] a, int low, int high)
+    {
+        if(low >= high) return;
+
+        int k = partition(a, low, high);
+        quick(a, low, k-1);
+        quick(a, k+1, high);
+    }
+
+    public static void merge(Comparable[] a, int low, int high)
+    {
+        if(low >= high) return;
+        int k = partition(a, low, high);
+        merge(a, low, k-1);
+        merge(a, k+1, high);
+    }
+
+
+    private static int partition(Comparable[] a, int low, int high)
+    {
+        //sample: {5,6,7,8,2,3,4,9,1,0};
+        Comparable k = a[low];
+        while (low < high) {
+            while ( greaternequal(a[high],k) && high > low)
+                high--;
+            a[low] = a [high];
+            while (lessnequal(a[low], k) && high > low)
+                low++;
+            a[high] = a[low];
+        }
+        a[low] = k;
+        return low;
+    }
+
+
     private static boolean less(Comparable v, Comparable w)
     {  return v.compareTo(w) < 0;  }
+
+    private static boolean lessnequal(Comparable v, Comparable w)
+    {  return v.compareTo(w) <= 0 ;  }
+
+    private static boolean greaternequal(Comparable v, Comparable w)
+    {  return v.compareTo(w) >= 0 ;  }
 
     private static void exch(Comparable[] a, int i, int j)
     {  Comparable t = a[i]; a[i] = a[j]; a[j] = t;  }
 
     public static void show(Comparable[] a)
-    {  // Print the array, on a single line.
+    {
         for (int i = 0; i < a.length; i++)
             System.out.print(a[i] + " ");
         System.out.println();

@@ -12,12 +12,14 @@ public class DoublingTest
         int[] a = new int[N];
         for (int i = 0; i < N; i++)
             a[i] = rdm.nextInt(MAX);
-        //Stopwatch timer = new Stopwatch();
 
+        StopWatch timer = new StopWatch();
+        timer.start();
         int cnt = ThreeSumFast.count(a);
-        //return timer.elapsedTime();
-        return 0;
+        timer.stop();
+        return timer.getElapsedTime();
     }
+
     public static void main(String[] args)
     {  // Print table of running times.
         for (int N = 250; true; N += N)

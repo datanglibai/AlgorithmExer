@@ -7,7 +7,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testSelectionSort();
+        sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
+        //doubleTesting();
+
+        //testSelectionSort();
 
         //int[] brokenEggs = new int[]{0,0,0,0,0,0,0,0,1,1,1,1,1,1};
         //System.out.println(ThrowingEggs.brokenF_lgN(brokenEggs));
@@ -50,6 +53,28 @@ public class Main {
         SortGeneral.insertion(a);
         assert SortGeneral.isSorted(a);
         SortGeneral.show(a);
+    }
+
+    public static void sortcompare(String[] sorts)
+    {
+        String alg1 = sorts[0];
+        String alg2 = sorts[1];
+        int N = Integer.parseInt(sorts[2]);
+        int T = Integer.parseInt(sorts[3]);
+        double t1 = SortCompare.timeRandomInput(alg1, N, T); // total for alg1
+        double t2 = SortCompare.timeRandomInput(alg2, N, T); // total for alg2
+        System.out.printf("For %d random Doubles\n    %s is", N, alg1);
+        System.out.printf(" %.1f times faster than %s\n", t2/t1, alg2);
+    }
+
+    public static void doubleTesting()
+    {
+        for (int N = 250; true; N += N)
+        {  // Print time for problem size N.
+            double time = DoublingTest.timeTrial(N);
+            System.out.printf("%7d %5.1f\n", N, time);
+
+        }
     }
 
     public static double binomial(int N, int k, double p)
