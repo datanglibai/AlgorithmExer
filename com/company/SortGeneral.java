@@ -12,7 +12,8 @@ public class SortGeneral
             int min = i;                 // index of minimal entr.
             for (int j = i+1; j < N; j++)
                 if (less(a[j], a[min])) min = j;
-            exch(a, i, min);
+            if(i != min)
+                exch(a, i, min);
         }
 
     }
@@ -23,7 +24,9 @@ public class SortGeneral
         for (int i = 1; i < N; i++)
         {  // Insert a[i] among a[i-1], a[i-2], a[i-3]... ..
             for (int j = i; j > 0 && less(a[j], a[j-1]); j--)
+            {
                 exch(a, j, j-1);
+            }
         }
     }
 
@@ -68,6 +71,7 @@ public class SortGeneral
 
     public static void merge(Comparable[] a, int low, int high)
     {
+        //this is not merge yet.
         if(low >= high) return;
         int k = partition(a, low, high);
         merge(a, low, k-1);

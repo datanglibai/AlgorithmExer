@@ -16,7 +16,6 @@ public class SortCompare
         if (alg.equals("Quick")) SortGeneral.quick(a, 0, a.length - 1);
         //if (alg.equals("Heap")) Heap.sort(a);
         timer.stop();
-        System.out.println(SortGeneral.isSorted(a));
         return timer.getElapsedTime();
     }
 
@@ -35,6 +34,52 @@ public class SortCompare
         }
         return total;
     }
+
+    public static double timeAscendingInput(String alg, int N, int T)
+    {  // Use alg to sort T random arrays of length N.
+        double total = 0.0;
+        Double[] a = new Double[N];
+
+        double initial = 2.0;
+        for (int t = 0; t < T; t++)
+        {  // Perform one experiment (generate and sort an array).
+            for (int i = 0; i < N; i++)
+                a[i] = initial + 1.0 * i;
+            total += time(alg, a);
+        }
+        return total;
+    }
+
+    public static double timeDescendingInput(String alg, int N, int T)
+    {  // Use alg to sort T random arrays of length N.
+        double total = 0.0;
+        Double[] a = new Double[N];
+
+        double initial = 2000000.0;
+        for (int t = 0; t < T; t++)
+        {  // Perform one experiment (generate and sort an array).
+            for (int i = 0; i < N; i++)
+                a[i] = initial - 1.0 * i;
+            total += time(alg, a);
+        }
+        return total;
+    }
+
+    public static double timeEqualInput(String alg, int N, int T)
+    {  // Use alg to sort T random arrays of length N.
+        double total = 0.0;
+        Double[] a = new Double[N];
+
+        double initial = 2000.0;
+        for (int t = 0; t < T; t++)
+        {  // Perform one experiment (generate and sort an array).
+            for (int i = 0; i < N; i++)
+                a[i] = initial;
+            total += time(alg, a);
+        }
+        return total;
+    }
+
     public static void main(String[] args)
     {
         String alg1 = args[0];

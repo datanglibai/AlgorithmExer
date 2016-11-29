@@ -37,14 +37,14 @@ public class Main {
 
 
         //System.out.println(mystery(3,11));
-        System.out.println("5 is prime? " + isPrime(5));
+/*        System.out.println("5 is prime? " + isPrime(5));
         System.out.println("8 is prime? " + isPrime(8));
 
 
         Scanner in = new Scanner(System.in);
         String inp = in.nextLine();
         int i = in.nextInt();
-        System.out.println(inp + " , " + i);
+        System.out.println(inp + " , " + i);*/
     }
 
     public static void testSelectionSort()
@@ -65,11 +65,28 @@ public class Main {
         double t2 = SortCompare.timeRandomInput(alg2, N, T); // total for alg2
         System.out.printf("For %d random Doubles\n    %s is", N, alg1);
         System.out.printf(" %.1f times faster than %s\n", t2/t1, alg2);
+
+        t1 = SortCompare.timeAscendingInput(alg1, N, T); // total for alg1
+        t2 = SortCompare.timeAscendingInput(alg2, N, T); // total for alg2
+        System.out.printf("For %d ascending Doubles\n    %s is", N, alg1);
+        System.out.printf(" %.1f times faster than %s\n", t2/t1, alg2);
+
+        t1 = SortCompare.timeDescendingInput(alg1, N, T); // total for alg1
+        t2 = SortCompare.timeDescendingInput(alg2, N, T); // total for alg2
+        System.out.printf("For %d descending Doubles\n    %s is", N, alg1);
+        System.out.printf(" %.1f times faster than %s\n", t2/t1, alg2);
+
+        t1 = SortCompare.timeEqualInput(alg1, N, T); // total for alg1
+        t2 = SortCompare.timeEqualInput(alg2, N, T); // total for alg2
+        System.out.printf("For %d equal Doubles\n    %s is", N, alg1);
+        System.out.printf(" %.1f times faster than %s\n", t2/t1, alg2);
+
     }
+
 
     public static void doubleTesting()
     {
-        for (int N = 250; true; N += N)
+        for (int N = 50; N < 2147483647; N += N)
         {  // Print time for problem size N.
             double time = DoublingTest.timeTrial(N);
             System.out.printf("%7d %5.1f\n", N, time);
