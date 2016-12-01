@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
+        testBinaryNode();
+        //sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
         //doubleTesting();
 
         //testSelectionSort();
@@ -45,6 +46,24 @@ public class Main {
         String inp = in.nextLine();
         int i = in.nextInt();
         System.out.println(inp + " , " + i);*/
+    }
+
+    public static void testBinaryNode(){
+        System.out.println();
+        int[] arr = new int[]{23,54,1,65,9,3,100};
+        BinaryNode root = new BinaryNode(arr[0], null, null);
+        for(int i=1; i<arr.length; i++){
+            root.addChild(arr[i]);
+        }
+        int height = BinaryNode.height(root);
+        System.out.println(height);
+        BinaryNode.sortediterate(root);
+        System.out.println();
+        BinaryNode.preIterate(root);
+        System.out.println();
+        BinaryNode.backIterate(root);
+        System.out.println();
+        BinaryNode.levelIterate(root);
     }
 
     public static void testSelectionSort()
