@@ -12,7 +12,7 @@ public class SortCompare
         if (alg.equals("Insertion")) SortGeneral.insertion(a);
         if (alg.equals("Selection")) SortGeneral.selection(a);
        // if (alg.equals("Shell")) Shell.sort(a);
-        if (alg.equals("Merge")) SortGeneral.merge(a, 0, a.length - 1);
+        if (alg.equals("Merge")) SortGeneral.mergeSort(a, 0, a.length - 1);
         if (alg.equals("Quick")) SortGeneral.quick(a, 0, a.length - 1);
         //if (alg.equals("Heap")) Heap.sort(a);
         timer.stop();

@@ -7,7 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testBinaryNode();
+
+        //testBinaryNode();
         //sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
         //doubleTesting();
 
@@ -16,7 +17,9 @@ public class Main {
         //int[] brokenEggs = new int[]{0,0,0,0,0,0,0,0,1,1,1,1,1,1};
         //System.out.println(ThrowingEggs.brokenF_lgN(brokenEggs));
         //System.out.println(ThrowingEggs.brokenF_lgF(brokenEggs));
-        //int[] data = new int[]{5,6,7,8,2,3,4,9,1,0};
+        Comparable<Integer>[] data = new Integer[]{5,6,7,8,2,3,4,9,1,0,15};
+        SortGeneral.mergeSort(data, 0, data.length - 1);
+        SortGeneral.show(data);
         //Sort.bubble(data);
         //for(int i = 0; i< data.length; i++)
         //System.out.println(data[i]);
