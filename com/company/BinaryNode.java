@@ -35,32 +35,32 @@ public class BinaryNode {
 
     //sorted is middle order
     //start from left, then root, then right
-    public static void sortediterate(BinaryNode node){
+    public static void ldrIterate(BinaryNode node){
         if(node == null) return;
 
-        sortediterate(node.getLChild());
+        ldrIterate(node.getLChild());
         System.out.print(node.getValue() + " ");
-        sortediterate(node.getRChild());
+        ldrIterate(node.getRChild());
 
     }
 
-    //start from root, then left, then right
-    public static void preIterate(BinaryNode node)
+    //pre traverse, start from root, then left, then right
+    public static void dlrIterate(BinaryNode node)
     {
         if(node == null) return;
 
         System.out.print(node.getValue() + " ");
-        preIterate(node.getLChild());
-        preIterate(node.getRChild());
+        dlrIterate(node.getLChild());
+        dlrIterate(node.getRChild());
     }
 
-    //start from left, then right, then root
-    public static void backIterate(BinaryNode node)
+    //back travers, start from left, then right, then root
+    public static void lrdIterate(BinaryNode node)
     {
         if(node == null) return;
 
-        backIterate(node.getLChild());
-        backIterate(node.getRChild());
+        lrdIterate(node.getLChild());
+        lrdIterate(node.getRChild());
         System.out.print(node.getValue() + " ");
 
     }
@@ -118,11 +118,11 @@ public class BinaryNode {
         }
         int height = BinaryNode.height(root);
         System.out.println(height);
-        BinaryNode.sortediterate(root);
+        BinaryNode.ldrIterate(root);
         System.out.println();
-        BinaryNode.preIterate(root);
+        BinaryNode.dlrIterate(root);
         System.out.println();
-        BinaryNode.backIterate(root);
+        BinaryNode.lrdIterate(root);
         System.out.println();
         BinaryNode.levelIterate(root);
     }

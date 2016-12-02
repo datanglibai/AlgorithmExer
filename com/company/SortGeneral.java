@@ -69,40 +69,45 @@ public class SortGeneral
         quick(a, k+1, high);
     }
 
-    public static void mergeSort(Comparable[] a, int low, int high)
+    public static void merge(Comparable[] a)
+    {
+        Comparable[] copy = new Comparable[a.length];
+        for (int i = 0; i< a.length; i ++) {
+            copy[i] = a[i];
+        }
+        mergesort(a, copy, 0, a.length - 1);
+    }
+
+    private static void mergesort(Comparable[] a, Comparable[] copy, int low, int high)
     {
         //this is not merge yet.
         if(low >= high) return;
         int mid = low + (high - low) / 2;
-        mergeSort(a, low, mid);
-        mergeSort(a, mid + 1, high);
-        merge(a, low, mid, high);
+        mergesort(a, copy, low, mid);
+        mergesort(a, copy, mid + 1, high);
+        merge(a, copy, low, mid, high);
     }
 
-    public static void merge(Comparable[] a, int low, int mid, int high)
+    private static void merge(Comparable[] a, Comparable[] copy, int low, int mid, int high)
     {
         if (lessnequal(a[mid],a[mid + 1]) ) return;
-
-        //copy array
-        Comparable[] copy = new Comparable[high - low + 1];
-        for (int i = 0; i< copy.length; i ++) {
-            copy[i] = a[low + i];
+        for(int i = low; i<= high; i++)
+        {
+            copy[i] = a[i];
         }
-
         //get less value from head of 2 sub array.
-        int lowofcopy = 0, midofcopy = mid - low, highofcopy = high - low;
-        int index1 = lowofcopy;
-        int index2 = midofcopy + 1;
+        int index1 = low;
+        int index2 = mid + 1;
         for (int i = low; i <= high; i ++)
         {
-            if(index1 <= midofcopy && index2 <= highofcopy){
+            if(index1 <= mid && index2 <= high){
                     a[i] = less(copy[index2], copy[index1])? copy[index2++] : copy[index1++];
             }
-            else if(index1 <= midofcopy && index2 > highofcopy)
+            else if(index1 <= mid && index2 > high)
             {
                 a[i]=copy[index1++];
             }
-            else if (index1> midofcopy && index2 <= highofcopy)
+            else if (index1> mid && index2 <= high)
             {
                 a[i] = copy[index2++];
             }
