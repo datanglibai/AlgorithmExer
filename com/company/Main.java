@@ -2,13 +2,18 @@ package com.company;
 
 import java.util.*;
 import java.io.*;
+import miscs.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        DecToHex.transform(16);
+        DecToHex.transform(256);
+        DecToHex.transform(10);
+        DecToHex.transform(23); //F7
 
-        testBinaryNode();
+        //testBinaryNode();
         //sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
         //doubleTesting();
 
