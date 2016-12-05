@@ -8,6 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        testHeapSort();
+
         DecToHex.transform(16);
         DecToHex.transform(256);
         DecToHex.transform(10);
@@ -110,6 +112,15 @@ public class Main {
 
     }
 
+    public static void testHeapSort()
+    {
+        //String[] a = new String[] {"jhfg","abc","this","is","a","quextion"};
+        Integer[] a = new Integer[] {5,7,3,8,9,1,2};
+        Heap.show(a);
+        Heap.sort(a);
+        Heap.show(a);
+
+    }
 
     public static void doubleTesting()
     {
