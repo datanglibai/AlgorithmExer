@@ -2,9 +2,9 @@ package com.company;
 
 public class BinaryNode {
 
-    private int value;//current value
-    private BinaryNode lChild;//left child
-    private BinaryNode rChild;//right child
+    public int value;//current value
+    public BinaryNode lChild;//left child
+    public BinaryNode rChild;//right child
 
     public BinaryNode(int value, BinaryNode l, BinaryNode r){
         this.value = value;

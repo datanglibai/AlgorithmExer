@@ -8,12 +8,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testHeapSort();
+        //another test case
+        //char[] pre2 = {'A','B','C','D','F','E'};
+        //char[] in2 = {'B','A','D','F','C','E'};
 
-        DecToHex.transform(16);
-        DecToHex.transform(256);
-        DecToHex.transform(10);
-        DecToHex.transform(23); //F7
+        BuildTreeByIteration builder = new BuildTreeByIteration();
+        builder.dlr = new char[]{'G','D','A','F','E','M','H','Z'};
+        builder.rdl = new char[] {'A','D','E','F','G','H','M','Z'};
+        BuildTreeByIteration.TreeNode root = builder.calByDrlAndRdl_length(0, 0, builder.dlr.length, "main" );
+
+
+
+        //int[] data = new int[5];
+        //Permutation.permutation(data, 0, 5);
+        //testHeapSort();
+
+        //DecToHex.transform(16);
+        //DecToHex.transform(256);
+        // DecToHex.transform(10);
+        //DecToHex.transform(23); //F7
 
         //testBinaryNode();
         //sortcompare(new String[]{"Insertion", "Selection", "50", "100"});
