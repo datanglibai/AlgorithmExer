@@ -8,17 +8,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        testBalancedTree();
+
         //another test case
         //char[] pre2 = {'A','B','C','D','F','E'};
         //char[] in2 = {'B','A','D','F','C','E'};
-
-        BuildTreeByIteration builder = new BuildTreeByIteration();
-        builder.dlr_pre = new char[] {'G','D','A','F','E','M','H','Z'};
-        builder.ldr_in = new char[] {'A','D','E','F','G','H','M','Z'};
-        builder.lrd_back = new char[] {'A','E','F','D','H','Z','M','G'};
-        int length = builder.ldr_in.length;
-        BuildTreeByIteration.TreeNode root1 = builder.calBackByPreAndIn(0, 0, length, "main" );
-        BuildTreeByIteration.TreeNode root2 = builder.calPreByBackAndIn(length - 1, length -1, length, "main" );
 
 
 
@@ -72,6 +66,37 @@ public class Main {
         String inp = in.nextLine();
         int i = in.nextInt();
         System.out.println(inp + " , " + i);*/
+    }
+
+    public static void testBalancedTree()
+    {
+        int[] a = new int[] {8,3,9,2,4,5};
+        BalancedBinaryNode root = new BalancedBinaryNode();
+        root.value = a[0];
+        for(int i = 1; i < a.length; i++)
+        {
+            BalancedBinaryNode node = new BalancedBinaryNode();
+            node.value = a[i];
+            root = root.addChild(node);  //root might change because of tree rotate.
+        }
+        System.out.println("start pre iterate---");
+        BalancedBinaryNode.dlrIterate(root);
+
+        System.out.println("start level iterate---");
+        BalancedBinaryNode.levelIterate(root);
+    }
+
+    public static void testCalcBinaryTreeOrder()
+    {
+        BuildTreeByIteration builder = new BuildTreeByIteration();
+        builder.dlr_pre = new char[] {'G','D','A','F','E','M','H','Z'};
+        builder.ldr_in = new char[] {'A','D','E','F','G','H','M','Z'};
+        builder.lrd_back = new char[] {'A','E','F','D','H','Z','M','G'};
+        int length = builder.ldr_in.length;
+        BuildTreeByIteration.TreeNode root1 = builder.calBackByPreAndIn(0, 0, length, "main" );
+        BuildTreeByIteration.TreeNode root2 = builder.calPreByBackAndIn(length - 1, length -1, length, "main" );
+
+
     }
 
     public static void testBinaryNode(){
