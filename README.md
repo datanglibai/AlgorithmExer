@@ -28,9 +28,15 @@ Use circular linked list to solve it.
    - LDR (in sorted, middle order)
    - DLR (Data Left Child)
    - LRD (back order)
+   - level Iterate
+
+## BuildTreeByIteration
+ - Build tree and calculate back order by pre and in order.
+ - Build tree and calculate pre order by back and in order.
 
 ## Sum
  - Fast ThreeSum
 
-##Expression Evaluator
+## Expression Evaluator
 Very simple one, can only evaluate expression with all brackets.
+

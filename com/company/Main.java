@@ -13,9 +13,12 @@ public class Main {
         //char[] in2 = {'B','A','D','F','C','E'};
 
         BuildTreeByIteration builder = new BuildTreeByIteration();
-        builder.dlr = new char[]{'G','D','A','F','E','M','H','Z'};
-        builder.rdl = new char[] {'A','D','E','F','G','H','M','Z'};
-        BuildTreeByIteration.TreeNode root = builder.calByDrlAndRdl_length(0, 0, builder.dlr.length, "main" );
+        builder.dlr_pre = new char[] {'G','D','A','F','E','M','H','Z'};
+        builder.ldr_in = new char[] {'A','D','E','F','G','H','M','Z'};
+        builder.lrd_back = new char[] {'A','E','F','D','H','Z','M','G'};
+        int length = builder.ldr_in.length;
+        BuildTreeByIteration.TreeNode root1 = builder.calBackByPreAndIn(0, 0, length, "main" );
+        BuildTreeByIteration.TreeNode root2 = builder.calPreByBackAndIn(length - 1, length -1, length, "main" );
 
 
 
