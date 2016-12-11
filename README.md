@@ -37,6 +37,10 @@ Use circular linked list to solve it.
 ## Balanced Binary Tree
  - Generation - Insertion balance
 
+## Priority Queue and Heap sort
+ - MinPQ, min root, children is greater than it, it can be used for TOP largest M problem.
+ - MaxPO, max root, children is less than it, it can be used for TOP smallest M problem.
+
 ## Sum
  - Fast ThreeSum
 
