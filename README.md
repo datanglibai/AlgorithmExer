@@ -34,9 +34,17 @@ Use circular linked list to solve it.
  - Build tree and calculate back order by pre and in order.
  - Build tree and calculate pre order by back and in order.
 
+## Balanced Binary Tree
+ - Generation - Insertion balance
+
 ## Sum
  - Fast ThreeSum
 
 ## Expression Evaluator
 Very simple one, can only evaluate expression with all brackets.
+
+## Miscs
+ - Permutation
+ - Decimal to Hex
+ - Binary/Hex to Decimal
 
