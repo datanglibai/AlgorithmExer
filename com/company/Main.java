@@ -7,8 +7,7 @@ import miscs.*;
 public class Main {
 
     public static void main(String[] args) {
-
-        testTopMByMinPQ(4);
+        //testTopMByMinPQ(4);
         //testBalancedTree();
 
         //another test case
