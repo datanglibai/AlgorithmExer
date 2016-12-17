@@ -41,6 +41,9 @@ Use circular linked list to solve it.
  - MinPQ, min root, children is greater than it, it can be used for TOP largest M problem.
  - MaxPO, max root, children is less than it, it can be used for TOP smallest M problem.
 
+## Symbol Table
+ - Sequential Search Table.
+
 ## Sum
  - Fast ThreeSum
 
