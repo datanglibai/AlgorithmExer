@@ -13,23 +13,15 @@ public class BigNumberAdd {
         int posB = b.length() - 1;
         int posRes = resultChars.length - 1;
         int carry= 0;
-        while (posA >= 0 && posB >= 0)
+        while (posA >= 0 || posB >= 0)
         {
-            int x = Character.getNumericValue(a.charAt(posA--));
-            int y = Character.getNumericValue(b.charAt(posB--));
+
+            int x = posA >= 0 ? Character.getNumericValue(a.charAt(posA--)) : 0;
+            int y = posB >= 0 ? Character.getNumericValue(b.charAt(posB--)) : 0;
 
             int remainder = (x + y + carry) % 10;
             resultChars[posRes--] = (char)(remainder + '0');
             carry = (x + y + carry) / 10;
-        }
-
-        while (posA >= 0)
-        {
-            resultChars[posRes--] =  a.charAt(posA--);
-        }
-        while (posB >= 0)
-        {
-            resultChars[posRes--] =  b.charAt(posA--);
         }
 
         if (carry == 1)
@@ -60,7 +52,7 @@ public class BigNumberAdd {
     }
 
     public static void main(String args[]) {
-        System.out.println(Add("123", "123"));
+        System.out.println(Add("12345", "7"));
         System.out.println(Add("123", "999"));
         System.out.println(Add("000123", "123"));
         System.out.println(Add("1", "0"));
